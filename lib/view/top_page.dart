@@ -19,7 +19,9 @@ class _TopPageState extends State<TopPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfffffef2),
       appBar: AppBar(
+        backgroundColor: Color(0xfffffef2),
         leading: IconButton(
             onPressed: () {},
             icon: const Icon(
@@ -73,6 +75,7 @@ class _TopPageState extends State<TopPage> {
                     height: 111,
                     width: 180,
                     child: Card(
+                      color: Colors.white,
                       margin: EdgeInsets.all(7),
                       child: Center(
                           child: Text(
@@ -86,6 +89,7 @@ class _TopPageState extends State<TopPage> {
                     height: 111,
                     width: 180,
                     child: Card(
+                      color: Colors.white,
                       margin: EdgeInsets.all(7),
                       child: Center(
                           child: Text('レシピ登録',
@@ -147,6 +151,7 @@ class _HistoryTimeLineState extends State<HistoryTimeLine> {
                 height: 60,
                 width: 330,
                 child: Card(
+                  color: Colors.white,
                   child: Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
