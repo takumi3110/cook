@@ -20,37 +20,28 @@ class _TopPageState extends State<TopPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.menu,
+              size: 40,
+              color: Color(0xff5a5a5a),
+            )),
         actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.menu,
-                    size: 40,
-                    color: Color(0xff5a5a5a),
-                  )),
-              Row(
-                children: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.home_outlined,
-                        size: 40,
-                        color: Color(0xff5a5a5a),
-                      )),
-                ],
-              ),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.notifications_outlined,
-                    size: 40,
-                    color: Color(0xff5a5a5a),
-                  ))
-            ],
-          ),
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.home_outlined,
+                size: 40,
+                color: Color(0xff5a5a5a),
+              )),
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.notifications_outlined,
+                size: 40,
+                color: Color(0xff5a5a5a),
+              )),
         ],
       ),
       body: Container(
