@@ -48,6 +48,7 @@ class _TopPageState extends State<TopPage> {
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.all(10),
         child: const Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Enjoy Cooking!!',
@@ -56,58 +57,61 @@ class _TopPageState extends State<TopPage> {
             SizedBox(
               height: 40,
             ),
-            Column(
-              children: [
-                Text(
-                  'CATEGORY',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xff5a5a5a)),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 5.0),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        height: 111,
-                        width: 180,
-                        child: Card(
-                          margin: EdgeInsets.all(7),
-                          child: Center(
-                              child: Text(
-                            'メニューを作る',
-                            style: TextStyle(
-                                fontSize: 18, color: Color(0xff5a5a5a)),
-                          )),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 111,
-                        width: 180,
-                        child: Card(
-                          margin: EdgeInsets.all(7),
-                          child: Center(
-                              child: Text('レシピ登録',
-                                  style: TextStyle(
-                                      fontSize: 18, color: Color(0xff5a5a5a)))),
-                        ),
-                      )
-                    ],
-                  ),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 50,
-            ),
             Text(
-              'HISTORY',
+              'CATEGORY',
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff5a5a5a)),
             ),
+            SizedBox(height: 5,),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5),
+              child: Row(
+                children: [
+                  SizedBox(
+                    height: 111,
+                    width: 180,
+                    child: Card(
+                      margin: EdgeInsets.all(7),
+                      child: Center(
+                          child: Text(
+                        'メニューを作る',
+                        style: TextStyle(
+                            fontSize: 18, color: Color(0xff5a5a5a)),
+                      )),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 111,
+                    width: 180,
+                    child: Card(
+                      margin: EdgeInsets.all(7),
+                      child: Center(
+                          child: Text('レシピ登録',
+                              style: TextStyle(
+                                  fontSize: 18, color: Color(0xff5a5a5a)))),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'HISTORY',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xff5a5a5a)),
+                ),
+              ],
+            ),
+            SizedBox(height: 5,),
             HistoryTimeLine()
           ],
         ),
@@ -138,7 +142,7 @@ class _HistoryTimeLineState extends State<HistoryTimeLine> {
           itemCount: historyList.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5),
+              padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 2),
               child: SizedBox(
                 height: 60,
                 width: 330,
