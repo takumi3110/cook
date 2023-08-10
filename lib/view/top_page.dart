@@ -10,18 +10,14 @@ class TopPage extends StatefulWidget {
 }
 
 class _TopPageState extends State<TopPage> {
-  List<History> historyList = [
-    History(content: 'this text is test text.', createdTime: DateTime.now()),
-    History(content: 'this text is test text 2.', createdTime: DateTime.now()),
-    History(content: 'this text is test text 3.', createdTime: DateTime.now())
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfffffef2),
+      backgroundColor: const Color(0xfffffef2),
+      // backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xfffffef2),
+        backgroundColor: const Color(0xfffffef2),
         leading: IconButton(
             onPressed: () {},
             icon: const Icon(
@@ -49,73 +45,135 @@ class _TopPageState extends State<TopPage> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.all(10),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Enjoy Cooking!!',
-              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+            Container(
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+              ),
+              child: const Text(
+                'Enjoy Cooking!!',
+                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              ),
             ),
-            SizedBox(
-              height: 40,
+            const SizedBox(
+              height: 30,
             ),
-            Text(
+            const Text(
               'CATEGORY',
               style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Color(0xff5a5a5a)),
             ),
-            SizedBox(height: 5,),
+           const SizedBox(
+              height: 5,
+            ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
+              padding: const EdgeInsets.all(10.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                    height: 111,
-                    width: 180,
-                    child: Card(
+                  Container(
+                    height: 105,
+                    width: 170,
+                    decoration: BoxDecoration(
                       color: Colors.white,
-                      margin: EdgeInsets.all(7),
-                      child: Center(
-                          child: Text(
-                        'メニューを作る',
-                        style: TextStyle(
-                            fontSize: 18, color: Color(0xff5a5a5a)),
-                      )),
+                      border: Border.all(
+                          color: Colors.amberAccent
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: const [BoxShadow(
+                          color: Colors.amberAccent,
+                          blurRadius: 2,
+                          offset: Offset(2, 2)
+                      )],
+                      // image: DecorationImage(image: AssetImage('assets/images/22119435.png'))
+                    ),
+                    child: Row(
+                      children: [
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          height: 105,
+                          width: 70,
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(image: AssetImage('assets/images/22123444.png'))
+                          ),
+
+                        ),
+                        const Text(
+                          'メニューを\n作る',
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xff5a5a5a),
+                              fontWeight: FontWeight.w500
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(
-                    height: 111,
-                    width: 180,
-                    child: Card(
-                      color: Colors.white,
-                      margin: EdgeInsets.all(7),
-                      child: Center(
-                          child: Text('レシピ登録',
-                              style: TextStyle(
-                                  fontSize: 18, color: Color(0xff5a5a5a)))),
+                  Container(
+                    height: 105,
+                    width: 170,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(
+                            color: Colors.amberAccent
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: const [BoxShadow(
+                            color: Colors.amberAccent,
+                            blurRadius: 2,
+                            offset: Offset(2, 2)
+                        )],
+                        // image: DecorationImage(image: AssetImage('assets/images/22119435.png'))
                     ),
-                  )
+                    child: Row(
+                      children: [
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          height: 105,
+                          width: 70,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(image: AssetImage('assets/images/22119435.png'))
+                          ),
+
+                        ),
+                        const Text(
+                          'レシピを\n登録する',
+                          style: TextStyle(
+                              fontSize: 18,
+                              color: Color(0xff5a5a5a),
+                              fontWeight: FontWeight.w500
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-            SizedBox(
-              height: 50,
+
+            const SizedBox(
+              height: 30,
             ),
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'HISTORY',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                       color: Color(0xff5a5a5a)),
                 ),
               ],
             ),
-            SizedBox(height: 5,),
+            const SizedBox(
+              height: 5,
+            ),
             HistoryTimeLine()
           ],
         ),
@@ -146,19 +204,31 @@ class _HistoryTimeLineState extends State<HistoryTimeLine> {
           itemCount: historyList.length,
           itemBuilder: (context, index) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 2),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 2),
               child: SizedBox(
                 height: 60,
                 width: 330,
                 child: Card(
+                  elevation: 0,
                   color: Colors.white,
+                  shape: const RoundedRectangleBorder(
+                    side: BorderSide(
+                      color: Colors.amberAccent,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(10))
+                  ),
                   child: Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Text(DateFormat('yyyy年MM月dd日').format(historyList[index].createdTime!), style: TextStyle(fontSize: 12),),
+                          child: Text(
+                            DateFormat('yyyy年MM月dd日')
+                                .format(historyList[index].createdTime!),
+                            style: const TextStyle(fontSize: 12, color: Color(0xff5a5a5a)),
+                          ),
                         ),
                         Text(historyList[index].content)
                       ],
